@@ -1,0 +1,77 @@
+0. 실행 파일 화면에 띄우기
+explorer.exe .
+
+1. cat명령어 
+ⓐ 파일 생성
+hello chan@DESKTOP-2H7FOPV:~/sysP/0322$ cat > cs2.txt
+Good job!!
+chan@DESKTOP-2H7FOPV:~/sysP/0322$ ll
+
+ⓑ 파일 읽기
+
+2. mv 명령어
+ⓐ 파일 이름 바꾸기
+$ mv 파일1 파일2 
+chan@DESKTOP-2H7FOPV:~/sysP/0322$ mv cs1.txt cs3.txt
+chan@DESKTOP-2H7FOPV:~/sysP/0322$ ll
+
+ⓑ 파일 이동 
+$ mv 파일 디렉터리
+chan@DESKTOP-2H7FOPV:~/sysP/0322$ mv cs3.txt ../tmp
+chan@DESKTOP-2H7FOPV:~/sysP/0322$ ll
+
+3. cp 명령어; 파일 복사
+chan@DESKTOP-2H7FOPV:~/sysP/0322$ cd lang/
+chan@DESKTOP-2H7FOPV:~/sysP/0322/lang$ cp ../cs2.txt .
+chan@DESKTOP-2H7FOPV:~/sysP/0322/lang$
+
+4. rm 명령어; 파일 삭제
+ⓐ $rm 파일 
+ⓑ $rmdir 디렉토리 (하위 파일 or 하위 디렉토리 없을 경우)
+ⓒ $rm-r 디렉터리 폴더 강제 삭제
+------------------------------------------------------------
+5. chmod: 파일 혹은 디렉터리의 사용권한을 변경하는 명령어
+사용권한 rw- rw- r--
+ⓐ$ chmod 110 110 100 cs1.txt (2진수)
+ⓑ$ chmod 664 cs1.txt  (8진수)
+------------------------------------------------------------
+6. 출력 재지정
+$ cat > list2.txt
+Hello ! 
+This is the second list.
+^D
+
+7. 출력 추가
+$ cat >> list1.txt
+Bye !
+This is the end of the first list.
+^D
+
+8. 입력 재지정
+$ wc < list1.txt
+
+9. 문서 내 입력(here document)
+$ wc << end
+hello ! 
+word count
+end
+------------------------------------------------------------
+10. 전면 처리
+: 명령어 끝날 때까지 명령어 실행을 기다려야한다.
+$ (sleep 100; echo done) 
+
+11. 후면 처리
+: 명령어들을 후면에서 처리하고 전면에서는 다른 작업을 할 수 있으면 동시에 여러 작업
+을 수행할 수 있다.
+$ (sleep 100; echo done) &
+
+12. 프로세스
+: 실행중인 프로그램을 확인할 수 있다
+$ ps
+$ ps u
+$ top
+
+13. 리눅스 도움말 
+ⓐman
+ⓑinfo
+ⓒ--help
